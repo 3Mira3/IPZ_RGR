@@ -73,13 +73,13 @@ https://jdbc.postgresql.org/download/
 
 ## Команди
 
-  ```liquibase status --changelog-file=changelog.xml```
+    liquibase status --changelog-file=changelog.xml
   
-  ```liquibase update --changelog-file=changelog.xml```
+    liquibase update --changelog-file=changelog.xml
 
-  ```liquibase rollbackCount 1 --changelog-file=changelog.xml```
+    liquibase rollbackCount 1 --changelog-file=changelog.xml
   
-  ```liquibase generateChangeLog --changelog-file=changelog.xml```
+    liquibase generateChangeLog --changelog-file=changelog.xml
 
 ------------------------------------------------------------------------
 
