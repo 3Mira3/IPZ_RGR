@@ -73,13 +73,43 @@ https://jdbc.postgresql.org/download/
 
 ## Команди
 
-    liquibase status --changelog-file=changelog.xml
-  
-    liquibase update --changelog-file=changelog.xml
+    ### Перевірка підключення
 
-    liquibase rollbackCount 1 --changelog-file=changelog.xml
-  
-    liquibase generateChangeLog --changelog-file=changelog.xml
+``` bash
+liquibase status
+```
+
+------------------------------------------------------------------------
+
+### Застосування змін
+
+``` bash
+liquibase update
+```
+
+------------------------------------------------------------------------
+
+### Додавання тегу
+
+``` bash
+liquibase tag --tag=version_with_data
+```
+
+------------------------------------------------------------------------
+
+### Відкат змін
+
+``` bash
+liquibase rollbackCount 1
+```
+
+------------------------------------------------------------------------
+
+### Генерація changelog
+
+``` bash
+liquibase generateChangeLog --changelog-file=changelog.xml
+```
 
 ------------------------------------------------------------------------
 
