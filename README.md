@@ -1,8 +1,8 @@
 # Робота із версійністю баз даних за допомогою Liquibase
 
-## Опис проєкту
+## Опис проекту
 
-Цей проєкт демонструє використання інструменту **Liquibase** для
+Цей проект демонструє використання інструменту **Liquibase** для
 керування версіями бази даних PostgreSQL.
 
 В рамках роботи: - використано базу даних "rest" (тематика: туризм) -
@@ -33,10 +33,9 @@ changeSet'ами - виконано оновлення (update) та відка�
 
 3.  Перевірити:
 
-```{=html}
-<!-- -->
 ```
     liquibase --version
+```
 
 ------------------------------------------------------------------------
 
@@ -50,7 +49,7 @@ https://jdbc.postgresql.org/download/
 
 ------------------------------------------------------------------------
 
-### 3. Структура проєкту
+### 3. Структура проекту
 
     IPZ_RGR/
     ├── liquibase/
@@ -75,15 +74,18 @@ https://jdbc.postgresql.org/download/
 ## Команди
 
   ```liquibase status --changelog-file=changelog.xml```
+  
   ```liquibase update --changelog-file=changelog.xml```
+
   ```liquibase rollbackCount 1 --changelog-file=changelog.xml```
+  
   ```liquibase generateChangeLog --changelog-file=changelog.xml```
 
 ------------------------------------------------------------------------
 
 ## Виконані changeSet'и
 
-    У рамках роботи було реалізовано:
+У рамках роботи було реалізовано:
 
 -   Створення тестової таблиці liquibase_test
 -   Створення основної таблиці subjects
@@ -103,10 +105,10 @@ https://jdbc.postgresql.org/download/
 
 ## Посилання
 
--   Репозиторій: ```https://github.com/3Mira3/IPZ_RGR.git```
--   Офіційна документація Liquibase: ```https://docs.liquibase.com```
+-   Репозиторій: https://github.com/3Mira3/IPZ_RGR.git
+-   Офіційна документація Liquibase: https://docs.liquibase.com
 
-## 📊 Висновок
+## Висновок
 
 Liquibase дозволяє ефективно керувати змінами бази даних,
 відслідковувати їх та виконувати rollback.
