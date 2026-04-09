@@ -1,5 +1,0 @@
-changeLogFile: changelog.xml
-url: jdbc:postgresql://localhost:5432/PostgreSQL 17
-username: postgres
-password: DBMira
-driver: org.postgresql.Driver
