@@ -12,7 +12,7 @@ changeSet'ами - виконано оновлення (update) та відка�
 
 ------------------------------------------------------------------------
 
-## ⚙️ Використані технології
+## Використані технології
 
 -   **Liquibase** - (Community Edition) — система керування версіями баз даних
 -   **PostgreSQL** - система управління базами даних
@@ -73,43 +73,15 @@ https://jdbc.postgresql.org/download/
 
 ## Команди
 
-    ### Перевірка підключення
+### Перевірка підключення: `liquibase status --changelog-file=changelog.xml`
 
-``` bash
-liquibase status
-```
+### Застосування змін: `liquibase update --changelog-file=changelog.xml`
 
-------------------------------------------------------------------------
+### Додавання тегу: `liquibase tag --tag=version_with_data`
 
-### Застосування змін
+### Відкат змін: `liquibase rollbackCount 1 --changelog-file=changelog.xml`
 
-``` bash
-liquibase update
-```
-
-------------------------------------------------------------------------
-
-### Додавання тегу
-
-``` bash
-liquibase tag --tag=version_with_data
-```
-
-------------------------------------------------------------------------
-
-### Відкат змін
-
-``` bash
-liquibase rollbackCount 1
-```
-
-------------------------------------------------------------------------
-
-### Генерація changelog
-
-``` bash
-liquibase generateChangeLog --changelog-file=changelog.xml
-```
+### Генерація changelog: `liquibase generateChangeLog --changelog-file=changelog.xml`
 
 ------------------------------------------------------------------------
 
