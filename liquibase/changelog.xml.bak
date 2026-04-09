@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Перша зміна для РГР -->
+    <changeSet id="2026-1" author="Mira">
+        <comment>Створення тестової таблиці liquibase_test для демонстрації Liquibase</comment>
+        <createTable tableName="liquibase_test">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)"/>
+            <column name="created_at" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Створення нормальної таблиці з предметами -->
+    <changeSet id="2026-2" author="Myroslava">
+        <comment>Створення таблиці subjects з предметами 6 семестру</comment>
+        <createTable tableName="subjects">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(150)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="teacher" type="varchar(100)"/>
+            <column name="works" type="varchar(100)"/>
+            <column name="created_at" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Заповнення таблиці предметами -->
+    <changeSet id="2026-3" author="Myroslava">
+        <comment>Заповнення таблиці subjects даними про предмети</comment>
+        
+        <insert tableName="subjects">
+            <column name="name" value="Технологія Інтернету речей"/>
+            <column name="teacher" value="Хропатий"/>
+            <column name="works" value="3 лаби + РГР"/>
+        </insert>
+
+        <insert tableName="subjects">
+            <column name="name" value="Технічні засоби захисту інформації"/>
+            <column name="teacher" value="Зайцев"/>
+            <column name="works" value="5 лаб"/>
+        </insert>
+
+        <insert tableName="subjects">
+            <column name="name" value="Інженерія програмного забезпечення"/>
+            <column name="teacher" value="Милиця"/>
+            <column name="works" value="3 лаби + РГР"/>
+        </insert>
+
+        <insert tableName="subjects">
+            <column name="name" value="Технології проектування комп'ютерних систем"/>
+            <column name="teacher" value="Роговенко"/>
+            <column name="works" value="6 лаб"/>
+        </insert>
+
+        <insert tableName="subjects">
+            <column name="name" value="Іноземна мова"/>
+            <column name="teacher" value="Пікун"/>
+            <column name="works" value="-"/>
+        </insert>
+		
+		<!-- Явний rollback для цього changeSet -->
+        <rollback>
+            <delete tableName="subjects"/>
+        </rollback>
+    </changeSet>
+    </changeSet>
+		
+</databaseChangeLog>
